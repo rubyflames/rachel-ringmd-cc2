@@ -3,6 +3,7 @@
   <div class="well">
     <h3><%= favorite.title %></h3>
     <p><%= favorite.body %></p>
-    <%= link_to "Read More", post_path(post), :class => 'btn btn-default' %>
+    <%= link_to "Read More", favorite_post_post_path(@post), :class => 'btn btn-default' %>
+    <%= link_to "Remove from favorites", favorite_post_path(@post), method: :delete, :class => 'btn btn-warning' %>
   </div>
 <% end %>
