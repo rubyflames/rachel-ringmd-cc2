@@ -5,6 +5,10 @@ Rails.application.routes.draw do
 
   get 'about' => 'pages#about', as: 'about'
 
+  get 'favorites' => 'favorite_posts#index', as: 'favorites'
+
   resources :posts
+
+  resources :favorite_posts, only: [:create, :destroy]
 
 end
