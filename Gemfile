@@ -32,6 +32,8 @@ gem 'jbuilder', '~> 2.5'
 
 gem 'pg'
 
+gem 'pg_search'
+
 gem 'devise'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
