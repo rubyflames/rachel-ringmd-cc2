@@ -12,5 +12,8 @@ class Post < ApplicationRecord
 
   pg_search_scope :search_by_post_content, :against => [:title, :body], :associated_against => {
     :users => :email
+  }, :using => {
+    :tsearch => {:prefix => true}
   }
+
 end
