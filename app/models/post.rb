@@ -4,7 +4,14 @@ class Post < ApplicationRecord
                     length: {minimum: 5}
   #minimum 5 characters
 
+  include PgSearch
+
   belongs_to :user
   has_many :favorites
   has_many :favorited_by, through: :favorites, source: :favorited, source_type: 'User'
+
+  pg_search_scope :blog_search, :associated_against => {
+    :posts => [:title, :body],
+    :users => :email
+  }
 end
