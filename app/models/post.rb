@@ -10,8 +10,7 @@ class Post < ApplicationRecord
   has_many :favorites
   has_many :favorited_by, through: :favorites, source: :favorited, source_type: 'User'
 
-  pg_search_scope :blog_search, :associated_against => {
-    :posts => [:title, :body],
+  pg_search_scope :search_by_post_content, :against => [:title, :body], :associated_against => {
     :users => :email
   }
 end
