@@ -9,9 +9,7 @@
                         data: {confirm: 'Are you sure?'},
                         :class => 'btn btn-danger' %>
 <!-- <%- end -%> -->
-<%- else -%>
-
-<%- unless current_user.favorite_posts.exists?(id: @post.id) -%>
+<%- elsif current_user.favorite_posts.exists?(id: @post.id) -%>
 <%= link_to "Add to favorites", favorite_posts_path(project_id: @project), method: :post, :class => 'btn btn-primary' %>
 <%- else -%>
 <%= link_to "Remove from favorites", favorite_post_path(@post), method: :delete, :class => 'btn btn-warning' %>
