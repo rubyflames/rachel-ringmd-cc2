@@ -4,6 +4,10 @@ class PostsController < ApplicationController
     p 'TEST'
   end
 
+  def search
+    @posts = Post.search_by_post_content(params[:query])
+  end
+
   def show
     @post = Post.find(params[:id])
   end
@@ -11,7 +15,6 @@ class PostsController < ApplicationController
   def new
     @post = Post.new
   end
-
 
   def create
     #render plain: params[:post].inspect
