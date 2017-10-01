@@ -1,11 +1,11 @@
 class PostsController < ApplicationController
   def index
-    @posts = Post.all
+    @posts = Post.all.order('created_at DESC')
     p 'TEST'
   end
 
   def search
-    @posts = Post.search_by_post_content(params[:query])
+    @posts = Post.search_by_post_content(params[:query]).order("created_at DESC")
   end
 
   def show
