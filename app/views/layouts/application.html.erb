@@ -43,7 +43,7 @@
 
     <div>
       <%= search_form_for @post do |f| %>
-        <div> <%= f.search_field :title :user_id :body, placeholder: 'Search title, author or content' %> </div>
+        <div> <%= f.search_field :search_by_post_content, placeholder: 'Search title, author or content' %> </div>
         <%= f.submit 'Search' %>
       <% end %>
     </div>
