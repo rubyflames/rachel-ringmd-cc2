@@ -5,7 +5,6 @@ Rails.application.routes.draw do
 
   get 'about' => 'pages#about', as: 'about'
 
-  get 'queries' => 'searches#queries', as: 'queries'
   get 'results' => 'searches#results', as: 'results'
 
   get 'favorite_posts' => 'favorite_posts#index', as: 'favorite_posts'
