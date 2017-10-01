@@ -41,8 +41,12 @@
       <p class="alert alert-danger"><%= alert %></p>
     <% end %>
 
-
-
+    <div>
+      <%= search_form_for @post do |f| %>
+        <div> <%= f.search_field :title :user_id :body, placeholder: 'Search title, author or content' %> </div>
+        <%= f.submit 'Search' %>
+      <% end %>
+    </div>
     <div class="container">
       <%= yield %>
     </div>
