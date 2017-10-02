@@ -42,8 +42,8 @@
     <% end %>
 
     <div>
-      <%= form_for @post do |f| %>
-        <div> <%= f.search_field :search_by_post_content, params[:query], placeholder: 'Search title, author or content' %> </div>
+      <%= form_for @post, :method => 'get' do |f| %>
+        <div> <%= f.search_field :search, params[:query], placeholder: 'Search title, author or content' %> </div>
         <%= f.submit 'Search' %>
       <% end %>
     </div>
